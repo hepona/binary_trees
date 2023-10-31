@@ -15,6 +15,9 @@ if (nw == NULL)
 return (NULL);
 if (parent == NULL)
 return (NULL);
+nw->parent = parent;
+nw->right = NULL;
+nw->n = value;
 if (parent->left != NULL)
 {
 nw->left = parent->left;
@@ -22,8 +25,6 @@ parent->left->parent = nw;
 }
 else
 nw->left = NULL;
-nw->parent = parent;
-nw->right = NULL;
-nw->n = value;
+parent->left = nw;
 return (nw);
 }
