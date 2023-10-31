@@ -22,6 +22,8 @@ if (parent->right != NULL)
 nw->right = parent->right;
 parent->right->parent = nw;
 }
+else
+nw->right = NULL;
 parent->right = nw;
 return (nw);
 }
