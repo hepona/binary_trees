@@ -4,14 +4,17 @@
  */
 int binary_tree_balance(const binary_tree_t *tree)
 {
-int balance = 0;
-if (tree == NULL)
-return (0);
-if (tree->left != NULL)
-balance++;
-if (tree->right != NULL)
-balance++;
-if (balance == 1)
-balance = -balance;
-return (balance);
+    if (tree == NULL)
+        return (0);
+
+    if (tree->left != NULL && tree->right != NULL)
+    {
+        return (binary_tree_balance(tree->left) + binary_tree_balance(tree->right));
+    }
+    if (tree->left != NULL || tree->right != NULL)
+    {
+        return (1+binary_tree_balance(tree->left) + binary_tree_balance(tree->right));
+    }
+
+    return (0);
 }
