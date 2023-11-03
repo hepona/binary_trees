@@ -14,9 +14,9 @@ return (NULL);
 else
 {
 if (node == node->parent->left)
-return(node->parent->right);
+return (node->parent->right);
 if (node == node->parent->right)
-return(node->parent->left);
+return (node->parent->left);
 }
-return(NULL);
+return (NULL);
 }
